@@ -8,13 +8,13 @@ export interface Service {
 }
 
 export const services: Service[] = [
-  {
+      {
     id: 1,
     title: "Marketing & Branding",
     label: "GROWTH",
     description:
       "We create clear brand identities and marketing strategies that help your business stand out, reach the right audience, and grow consistently.",
-    icon: "↗",
+    icon: "◆",
     tags: ["Brand Identity", "Marketing Strategy", "Content"],
   },
   {
