@@ -49,8 +49,7 @@ const Projects = () => {
               confidence.
             </p>
             <div className="projects-count">
-              <strong>04</strong>
-              <span>Systems Built</span>
+              <span>Systems We've Built</span>
             </div>
           </div>
         </div>
@@ -85,23 +84,10 @@ const Projects = () => {
                     </div>
                   )}
 
-                  {project.visual === "nova" && (
-                    <div className="nova-visual">
-                      <div className="nova-orbit">
-                        <span className="nova-center">S</span>
-                        <span className="nova-dot dot-one" />
-                        <span className="nova-dot dot-two" />
-                        <span className="nova-dot dot-three" />
-                      </div>
-                      <span className="visual-small-text">SCHOOL SYSTEM</span>
-                    </div>
-                  )}
-
                   {project.visual === "hr" && (
                     <div className="hr-visual">
                       <span className="visual-big-number">HR</span>
                       <span className="visual-small-text">MANAGEMENT SYSTEM</span>
-
                     </div>
                   )}
                 </div>
