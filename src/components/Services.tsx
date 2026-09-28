@@ -67,11 +67,7 @@ const icons: Record<string, JSX.Element> = {
         stroke="currentColor"
         strokeWidth="2"
       />
-      <path
-        d="M6 18H42"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
+      <path d="M6 18H42" stroke="currentColor" strokeWidth="2" />
       <circle cx="14" cy="28" r="3" stroke="currentColor" strokeWidth="2" />
       <path
         d="M22 30H32"
