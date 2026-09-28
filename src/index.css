@@ -384,6 +384,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--gold-deep);
 }
 
+/* 1. المربع نفسه */
 .service-icon-large {
   width: 90px; height: 90px;
   display: flex; align-items: center; justify-content: center;
@@ -399,6 +400,20 @@ a { color: inherit; text-decoration: none; }
     border-color var(--dur-slow) var(--ease-smooth);
 }
 
+/* 2. الجديد — حجم الـ SVG */
+.service-icon-large svg {
+  width: 42px;
+  height: 42px;
+  display: block;
+  transition: transform var(--dur-slow) var(--ease-soft);
+}
+
+/* 3. الجديد — تكبير الـ SVG عند الـ hover */
+.service-item:hover .service-icon-large svg {
+  transform: scale(1.05);
+}
+
+/* 4. الأصلي — المربع عند الـ hover */
 .service-item:hover .service-icon-large {
   color: #FFFFFF;
   background: var(--navy);
