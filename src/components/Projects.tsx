@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { projects, Project } from "../data/projects";
 
 // ✅ استدعاء الصور
@@ -206,102 +207,108 @@ const Projects = () => {
       </div>
 
 
-      {/* ============ MODAL ============ */}
-      {selectedProject && !lightboxOpen && (
-        <div
-          className="project-modal-overlay"
-          onClick={closeModal}
-        >
+      {/* ============ MODAL (Portal) ============ */}
+      {selectedProject && !lightboxOpen &&
+        createPortal(
           <div
-            className="project-modal"
-            onClick={(e) => e.stopPropagation()}
+            className="project-modal-overlay"
+            onClick={closeModal}
           >
+            <div
+              className="project-modal"
+              onClick={(e) => e.stopPropagation()}
+            >
 
+              <button
+                className="project-modal-close"
+                onClick={closeModal}
+                aria-label="Close"
+              >
+                ✕
+              </button>
+
+              <div
+                className="project-modal-image"
+                onClick={openLightbox}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    openLightbox();
+                  }
+                }}
+              >
+                <img
+                  src={getImage(selectedProject.image)}
+                  alt={selectedProject.title}
+                />
+                <div className="project-modal-image-hint">
+                  اضغط لتكبير الصورة
+                </div>
+              </div>
+
+              <div className="project-modal-content">
+
+                <div className="project-modal-meta">
+                  <span className="project-modal-category">
+                    {selectedProject.category}
+                  </span>
+                </div>
+
+                <h2 className="project-modal-title">
+                  {selectedProject.title}
+                </h2>
+
+                <p className="project-modal-description">
+                  {selectedProject.description}
+                </p>
+
+                <div className="project-modal-tags">
+                  {selectedProject.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+
+                <div className="project-modal-result">
+                  <span>KEY RESULT</span>
+                  <strong>{selectedProject.result}</strong>
+                </div>
+
+              </div>
+
+            </div>
+          </div>,
+          document.body
+        )
+      }
+
+
+      {/* ============ LIGHTBOX (Portal) ============ */}
+      {lightboxOpen && selectedProject &&
+        createPortal(
+          <div
+            className="lightbox-overlay"
+            onClick={closeLightbox}
+          >
             <button
-              className="project-modal-close"
-              onClick={closeModal}
+              className="lightbox-close"
+              onClick={closeLightbox}
               aria-label="Close"
             >
               ✕
             </button>
 
-            <div
-              className="project-modal-image"
-              onClick={openLightbox}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  openLightbox();
-                }
-              }}
-            >
-              <img
-                src={getImage(selectedProject.image)}
-                alt={selectedProject.title}
-              />
-              <div className="project-modal-image-hint">
-                اضغط لتكبير الصورة
-              </div>
-            </div>
-
-            <div className="project-modal-content">
-
-              <div className="project-modal-meta">
-                <span className="project-modal-category">
-                  {selectedProject.category}
-                </span>
-              </div>
-
-              <h2 className="project-modal-title">
-                {selectedProject.title}
-              </h2>
-
-              <p className="project-modal-description">
-                {selectedProject.description}
-              </p>
-
-              <div className="project-modal-tags">
-                {selectedProject.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-
-              <div className="project-modal-result">
-                <span>KEY RESULT</span>
-                <strong>{selectedProject.result}</strong>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      )}
-
-
-      {/* ============ LIGHTBOX ============ */}
-      {lightboxOpen && selectedProject && (
-        <div
-          className="lightbox-overlay"
-          onClick={closeLightbox}
-        >
-          <button
-            className="lightbox-close"
-            onClick={closeLightbox}
-            aria-label="Close"
-          >
-            ✕
-          </button>
-
-          <img
-            src={getImage(selectedProject.image)}
-            alt={selectedProject.title}
-            className="lightbox-image"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+            <img
+              src={getImage(selectedProject.image)}
+              alt={selectedProject.title}
+              className="lightbox-image"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>,
+          document.body
+        )
+      }
 
     </section>
   );
