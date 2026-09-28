@@ -1,7 +1,9 @@
+import type { ReactElement } from "react";
 import { services } from "../data/services";
 
+
 // ✅ أيقونات SVG
-const icons: Record<string, JSX.Element> = {
+const icons: Record<string, ReactElement> = {
   megaphone: (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
