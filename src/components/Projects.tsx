@@ -14,6 +14,7 @@ const getImage = (name?: string) => {
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const systemsProjects = projects.filter((p) => p.section === "systems");
   const marketingProjects = projects.filter((p) => p.section === "marketing");
@@ -25,7 +26,16 @@ const Projects = () => {
 
   const closeModal = () => {
     setSelectedProject(null);
+    setLightboxOpen(false);
     document.body.style.overflow = "";
+  };
+
+  const openLightbox = () => {
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
   };
 
   return (
@@ -197,7 +207,7 @@ const Projects = () => {
 
 
       {/* ============ MODAL ============ */}
-      {selectedProject && (
+      {selectedProject && !lightboxOpen && (
         <div
           className="project-modal-overlay"
           onClick={closeModal}
@@ -215,11 +225,25 @@ const Projects = () => {
               ✕
             </button>
 
-            <div className="project-modal-image">
+            <div
+              className="project-modal-image"
+              onClick={openLightbox}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  openLightbox();
+                }
+              }}
+            >
               <img
                 src={getImage(selectedProject.image)}
                 alt={selectedProject.title}
               />
+              <div className="project-modal-image-hint">
+                اضغط لتكبير الصورة
+              </div>
             </div>
 
             <div className="project-modal-content">
@@ -252,6 +276,30 @@ const Projects = () => {
             </div>
 
           </div>
+        </div>
+      )}
+
+
+      {/* ============ LIGHTBOX ============ */}
+      {lightboxOpen && selectedProject && (
+        <div
+          className="lightbox-overlay"
+          onClick={closeLightbox}
+        >
+          <button
+            className="lightbox-close"
+            onClick={closeLightbox}
+            aria-label="Close"
+          >
+            ✕
+          </button>
+
+          <img
+            src={getImage(selectedProject.image)}
+            alt={selectedProject.title}
+            className="lightbox-image"
+            onClick={(e) => e.stopPropagation()}
+          />
         </div>
       )}
 
