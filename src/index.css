@@ -1615,32 +1615,25 @@ a { color: inherit; text-decoration: none; }
 }
 /* =========================================
    إخفاء الأيقونات/الأشكال بجانب الأرقام
-   في قسم الخدمات (Services Section)
+   في قسم الخدمات (Services Section) فقط
 ========================================= */
 
-/* هذا الكود يفترض أن الأيقونة موجودة داخل عنصر يحمل كلاس 
-   .service-icon-large أو .service-icon 
-   أو أي عنصر وسيط بين الرقم والعنوان. 
-   إذا كانت الأيقونة عبارة عن عنصر HTML منفصل، قم بإخفائه. */
-
-.service-icon-large,
-.service-icon,
-.service-item > svg,
-.service-item > i,
-.service-item > div:not(.service-main):not(.service-number) {
+.services-section .service-icon-large,
+.services-section .service-icon,
+.services-section .service-item > svg,
+.services-section .service-item > i,
+.services-section .service-item > div:not(.service-main):not(.service-number) {
   display: none !important;
 }
 
-/* تعديل بسيط لضبط عرض العمود الأول بعد إخفاء الأيقونة */
-/* هذا يضمن أن الرقم يظهر في مكانه الصحيح دون ترك فراغ كبير */
-.service-item {
+/* ضبط عرض العمود الأول بعد إخفاء الأيقونة */
+.services-section .service-item {
   grid-template-columns: 4.5rem 1fr !important;
   gap: 2.2rem !important;
 }
 
-/* في حالة الشاشات الصغيرة */
 @media (max-width: 600px) {
-  .service-item {
+  .services-section .service-item {
     grid-template-columns: 50px 1fr !important;
     gap: 22px !important;
   }
