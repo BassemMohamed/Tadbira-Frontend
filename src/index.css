@@ -1618,22 +1618,22 @@ a { color: inherit; text-decoration: none; }
    في قسم الخدمات (Services Section) فقط
 ========================================= */
 
-.services-section .service-icon-large,
-.services-section .service-icon,
-.services-section .service-item > svg,
-.services-section .service-item > i,
-.services-section .service-item > div:not(.service-main):not(.service-number) {
+/* إخفاء الأيقونات اللي جنب رقم الخدمة */
+.service-icon-large,
+.service-icon,
+.service-item > svg,
+.service-item > i {
   display: none !important;
 }
 
 /* ضبط عرض العمود الأول بعد إخفاء الأيقونة */
-.services-section .service-item {
+.service-item {
   grid-template-columns: 4.5rem 1fr !important;
   gap: 2.2rem !important;
 }
 
 @media (max-width: 600px) {
-  .services-section .service-item {
+  .service-item {
     grid-template-columns: 50px 1fr !important;
     gap: 22px !important;
   }
