@@ -153,7 +153,6 @@ const Projects = () => {
               with their audience.
             </p>
             <div className="projects-count">
-              <span>03</span>
               <span>Creative Projects</span>
             </div>
           </div>
