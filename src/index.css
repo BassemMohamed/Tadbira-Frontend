@@ -405,15 +405,14 @@ a { color: inherit; text-decoration: none; }
   width: 5rem; height: 5rem;
   display: flex; align-items: center; justify-content: center;
   color: var(--gold-deep);
-  border: 1px solid var(--border-gold);
+  border: none;
   font-family: "Cormorant Garamond", serif;
   font-size: 2.33rem;
   transition:
     background var(--dur-slow) var(--ease-smooth),
     color var(--dur-slow) var(--ease-smooth),
     transform var(--dur-slow) var(--ease-soft),
-    box-shadow var(--dur-slow) var(--ease-smooth),
-    border-color var(--dur-slow) var(--ease-smooth);
+    box-shadow var(--dur-slow) var(--ease-smooth);
 }
 
 /* 2. الجديد — حجم الـ SVG */
@@ -432,10 +431,8 @@ a { color: inherit; text-decoration: none; }
 /* 4. الأصلي — المربع عند الـ hover */
 .service-item:hover .service-icon-large {
   color: #FFFFFF;
-  background: var(--navy);
-  border-color: var(--navy);
-  transform: rotate(8deg) scale(1.05);
-  box-shadow: 0 14px 32px rgba(52, 68, 92, 0.22);
+  background: transparent;
+  transform: rotate(8deg) scale(1.1);
 }
 
 .service-main { max-width: 41.7rem; }
@@ -797,8 +794,6 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid var(--border);
 }
 
-.project-result-box { display: flex; flex-direction: column; gap: 7px; }
-
 .project-result-box { display: flex; flex-direction: column; gap: 0.4rem; }
 
 .project-result-box span {
@@ -815,30 +810,30 @@ a { color: inherit; text-decoration: none; }
    ABOUT
 ========================================= */
 
-.about-grid { display: grid; grid-template-columns: 0.9fr 1fr; gap: 130px; }
-.about-content { max-width: 680px; }
+.about-grid { display: grid; grid-template-columns: 0.9fr 1fr; gap: 7.2rem; }
+.about-content { max-width: 37.8rem; }
 
 .about-lead {
   color: var(--navy) !important;
   font-family: "Cormorant Garamond", serif;
-  font-size: 34px !important;
+  font-size: 1.9rem  !important;
   line-height: 1.35 !important;
 }
 
-.about-content p { margin-bottom: 28px; color: var(--muted); font-size: 15px; line-height: 1.9; }
+.about-content p { margin-bottom: 1.55rem; color: var(--muted); font-size: 0.83rem; line-height: 1.9; }
 
 .about-statement {
-  margin-top: 60px; padding-top: 28px;
+  margin-top: 3.3rem; padding-top: 1.55rem;
   border-top: 1px solid var(--border);
 }
 
-.about-statement span { color: var(--gold-deep); font-size: 10px; letter-spacing: 3px; }
+.about-statement span { color: var(--gold-deep); font-size: 0.55rem; letter-spacing: 3px; }
 
 .about-statement strong {
-  display: block; margin-top: 18px;
+  display: block; margin-top: 1rem;
   color: var(--navy);
   font-family: "Cormorant Garamond", serif;
-  font-size: 40px; line-height: 1.05;
+  font-size: 2.2rem; line-height: 1.05;
 }
 
 /* =========================================
@@ -848,8 +843,8 @@ a { color: inherit; text-decoration: none; }
 .contact-box {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
-  gap: 80px;
-  padding: 65px;
+  gap: 4.5rem;
+  padding: 3.6rem;
   background:
     linear-gradient(135deg, rgba(179, 160, 133, 0.08), transparent 50%),
     var(--bg-card);
@@ -857,24 +852,24 @@ a { color: inherit; text-decoration: none; }
 }
 
 .contact-info > p:not(.eyebrow) {
-  max-width: 480px; margin-top: 34px;
-  color: var(--muted); font-size: 15px; line-height: 1.9;
+  max-width: 26.7rem; margin-top: 1.9rem;
+  color: var(--muted); font-size: 0.83rem; line-height: 1.9;
 }
 
-.contact-form { display: flex; flex-direction: column; gap: 26px; }
+.contact-form { display: flex; flex-direction: column; gap: 1.45rem; }
 
-.form-group { display: flex; flex-direction: column; gap: 10px; }
+.form-group { display: flex; flex-direction: column; gap: 0.55rem; }
 
-.form-group label { color: var(--navy); font-size: 12px; font-weight: 600; }
+.form-group label { color: var(--navy); font-size: 0.67rem; font-weight: 600; }
 
 .form-group input, .form-group textarea {
   width: 100%;
-  padding: 17px 18px;
+  padding: 0.95rem 1rem;
   color: var(--navy);
   background: rgba(52, 68, 92, 0.03);
   border: 1px solid rgba(52, 68, 92, 0.15);
   outline: none;
-  font-size: 14px;
+  font-size: 0.78rem;
   transition: border-color var(--dur-med) var(--ease-smooth),
               box-shadow var(--dur-med) var(--ease-smooth);
 }
@@ -887,13 +882,13 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 0 0 3px rgba(179, 160, 133, 0.15);
 }
 
-.interest-options { display: flex; flex-wrap: wrap; gap: 10px; }
+.interest-options { display: flex; flex-wrap: wrap; gap: 0.55rem; }
 
 .interest-option {
-  padding: 10px 16px;
+  padding: 0.55rem 0.9rem;
   color: var(--muted); background: transparent;
   border: 1px solid rgba(52, 68, 92, 0.18);
-  font-size: 12px;
+  font-size: 0.67rem;
   transition:
     background var(--dur-med) var(--ease-smooth),
     color var(--dur-med) var(--ease-smooth),
@@ -908,15 +903,15 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 10px 22px rgba(52, 68, 92, 0.2);
 }
 
-.submit-button { align-self: flex-start; min-width: 200px; margin-top: 8px; }
-.form-status { color: var(--gold-deep); font-size: 13px; }
+.submit-button { align-self: flex-start; min-width: 11.1rem; margin-top: 0.45rem; }
+.form-status { color: var(--gold-deep); font-size: 0.72rem; }
 
 /* =========================================
    FOOTER
 ========================================= */
 
 .footer {
-  padding: 60px 0 25px;
+  padding: 3.3rem 0 1.4rem;
   background: var(--bg-light);
   border-top: 1px solid var(--border-gold);
 }
@@ -925,8 +920,8 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 40px;
-  gap: 30px;
+  padding-bottom: 2.2rem;
+  gap: 1.7rem;
 }
 
 .footer-brand { display: flex; align-items: center; }
@@ -944,19 +939,19 @@ a { color: inherit; text-decoration: none; }
 .footer-logo:hover { transform: scale(1.06); }
 
 .footer-logo img {
-  height: 80px;
+  height: 4.4rem;
   width: auto;
-  max-width: 250px;
+  max-width: 13.9rem;
   display: block;
   object-fit: contain;
 }
 
-.footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
+.footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
 
 .footer-links button {
   background: transparent;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 0.72rem;
   font-weight: 500;
   transition: color var(--dur-med) var(--ease-smooth),
               transform var(--dur-med) var(--ease-soft);
@@ -971,12 +966,12 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 22px;
+  padding-top: 1.22rem;
   border-top: 1px solid var(--border);
   color: var(--muted);
-  font-size: 11px;
+  font-size: 0.6rem;
   letter-spacing: 0.5px;
-  gap: 16px;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
@@ -1289,7 +1284,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 1.7rem;
   animation: modalFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1301,7 +1296,7 @@ a { color: inherit; text-decoration: none; }
 .project-modal {
   position: relative;
   width: 100%;
-  max-width: 950px;
+  max-width: 52.8rem;
   max-height: 85vh;
   overflow: hidden;
   background: #24334A;
@@ -1325,11 +1320,11 @@ a { color: inherit; text-decoration: none; }
 
 .project-modal-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 1.1rem;
+  right: 1.1rem;
   z-index: 10;
-  width: 44px;
-  height: 44px;
+  width: 2.45rem;
+  height: 2.45rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1337,7 +1332,7 @@ a { color: inherit; text-decoration: none; }
   color: #24334A;
   border: none;
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1366,7 +1361,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .project-modal-content {
-  padding: 50px 45px;
+  padding: 2.8rem 2.5rem;
   color: #F1EFE8;
   display: flex;
   flex-direction: column;
@@ -1379,14 +1374,14 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 22px;
+  padding-bottom: 1.22rem;
   border-bottom: 1px solid rgba(179, 160, 133, 0.25);
-  margin-bottom: 32px;
+  margin-bottom: 1.8rem;
 }
 
 .project-modal-category {
   color: #C9B99F;
-  font-size: 11px;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -1404,23 +1399,23 @@ a { color: inherit; text-decoration: none; }
 
 .project-modal-description {
   color: rgba(241, 239, 232, 0.8);
-  font-size: 15px;
+  font-size: 0.83rem;
   line-height: 1.9;
-  margin: 0 0 30px;
+  margin: 0 0 1.7rem;
 }
 
 .project-modal-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 34px;
+  gap: 0.55rem;
+  margin-bottom: 1.9rem;
 }
 
 .project-modal-tags span {
-  padding: 8px 13px;
+  padding: 0.45rem 0.72rem;
   color: #C9B99F;
   border: 1px solid rgba(179, 160, 133, 0.35);
-  font-size: 10px;
+  font-size: 0.55rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
@@ -1428,14 +1423,14 @@ a { color: inherit; text-decoration: none; }
 .project-modal-result {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: 26px;
+  gap: 0.55rem;
+  padding-top: 1.45rem;
   border-top: 1px solid rgba(179, 160, 133, 0.25);
 }
 
 .project-modal-result span {
   color: rgba(241, 239, 232, 0.5);
-  font-size: 10px;
+  font-size: 0.55rem;
   font-weight: 600;
   letter-spacing: 2px;
 }
@@ -1443,7 +1438,7 @@ a { color: inherit; text-decoration: none; }
 .project-modal-result strong {
   color: #C9B99F;
   font-family: "Cormorant Garamond", serif;
-  font-size: 30px;
+  font-size: 1.7rem;
   font-weight: 600;
 }
 
@@ -1580,7 +1575,7 @@ a { color: inherit; text-decoration: none; }
   align-items: center !important;
   justify-content: center !important;
 
-  padding: 40px;
+  padding: 2.2rem;
 
   margin: 0 !important;
 
@@ -1604,12 +1599,12 @@ a { color: inherit; text-decoration: none; }
 
 .lightbox-close {
   position: fixed;
-  top: 25px;
-  right: 25px;
+  top: 1.4rem;
+  right: 1.4rem;
   z-index: 10;
 
-  width: 50px;
-  height: 50px;
+  width: 2.8rem;
+  height: 2.8rem;
 
   display: flex;
   align-items: center;
@@ -1621,7 +1616,7 @@ a { color: inherit; text-decoration: none; }
   border: none;
   border-radius: 50%;
 
-  font-size: 20px;
+  font-size: 1.1rem;
   font-weight: 600;
 
   cursor: pointer;
