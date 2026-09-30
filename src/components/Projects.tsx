@@ -153,7 +153,7 @@ const Projects = () => {
               with their audience.
             </p>
             <div className="projects-count">
-              <strong>03</strong>
+              <span>03</span>
               <span>Creative Projects</span>
             </div>
           </div>
@@ -229,7 +229,10 @@ const Projects = () => {
 
               <div
                 className="project-modal-image"
-                onClick={openLightbox}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  openLightbox();
+                }}
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
